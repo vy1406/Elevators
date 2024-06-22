@@ -56,7 +56,7 @@ const FormComponent: React.FC<FormComponentProps> = ({ onSubmit, onReset }) => {
               marks
             />
             
-            <FormControlLabel
+            {/* <FormControlLabel
               control={
                 <Field
                   as={Checkbox}
@@ -68,7 +68,7 @@ const FormComponent: React.FC<FormComponentProps> = ({ onSubmit, onReset }) => {
                 />
               }
               label="Randomly Assign Elevators to Floors"
-            />
+            /> */}
             
             <Button type="submit" variant="contained" color="primary">
               Generate

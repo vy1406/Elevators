@@ -98,15 +98,17 @@ const App: React.FC = () => {
   return (
     <Container>
       <FormComponent onSubmit={handleOnGenerate} onReset={handleOnReset} />
-      <Button type="submit" variant="contained" color="primary" onClick={handleOnGo}>
-        Go !
-      </Button>
-      <Button type="submit" variant="contained" color="primary" onClick={handleOnPause}>
-        Pause !
-      </Button>
-      <Button type="submit" variant="contained" color="primary" onClick={handleOnContinue}>
-        Continue !
-      </Button>
+      <Controls>
+        <Button type="submit" variant="contained" color="primary" onClick={handleOnGo}>
+          Go !
+        </Button>
+        <Button type="submit" variant="contained" color="primary" onClick={handleOnPause}>
+          Pause !
+        </Button>
+        <Button type="submit" variant="contained" color="primary" onClick={handleOnContinue}>
+          Continue !
+        </Button>
+      </Controls>
       {elevators?.length > 0 &&
         <Display>
           <FloorStack floorStack={floorStack} />
@@ -132,4 +134,11 @@ const Display = styled.div`
   margin-top: 20px;
   width: 100%;
   gap: 5px;
+`;
+
+const Controls = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
 `;

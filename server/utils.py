@@ -7,7 +7,7 @@ def periodic_tick(socketio, stop_tick, pause_tick, state):
     while not stop_tick.is_set():
         if not pause_tick.is_set():
             handle_tick(socketio, state)
-        socketio.sleep(0.2)
+        socketio.sleep(0.02)
 
 def reset_state():
     global state
