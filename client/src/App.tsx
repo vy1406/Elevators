@@ -27,7 +27,7 @@ const App: React.FC = () => {
 
 
   useEffect(() => {
-    const tempSocket = io('http://localhost:8080');
+    const tempSocket = io('http://localhost:5000');
     setSocket(tempSocket);
 
     tempSocket.on('get_elevator', (stack: number[]) => {

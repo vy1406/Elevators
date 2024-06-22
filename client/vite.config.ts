@@ -5,6 +5,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true, // to expose the server on all network interfaces
-    port: 5000
+    port: 8080
   }
 });
