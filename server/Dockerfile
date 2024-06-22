@@ -13,7 +13,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Expose the port on which your app will run
-EXPOSE 8080
+EXPOSE 5000
 
 # Command to run your application
-CMD ["gunicorn", "-b", "0.0.0.0:8080", "app:app", "--worker-class", "eventlet", "--workers", "1"]
+CMD ["gunicorn", "-b", "0.0.0.0:5000", "app:app", "--worker-class", "eventlet", "--workers", "1"]
