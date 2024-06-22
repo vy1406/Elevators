@@ -1,0 +1,29 @@
+version: "3.4"
+services:
+  client:
+    container_name: client
+    image: node:18-alpine
+    depends_on:
+      - server
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./client:/srv/app
+      - node_modules:/srv/app/node_modules
+    working_dir: /srv/app
+    tty: true
+
+  server:
+    build:
+      context: ./server
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./server:/app
+    tty: true
+
+volumes:
+  node_modules: {}
